@@ -1,67 +1,67 @@
 #include "shell.h"
 
 /**
- **_strncpy - Copies a str
- *@dest: the destination str to be copied to
- *@src: the source str
- *@n: the amount of chars to be copied
- *Return: the concatenated str
+ **_strncpy - the function here copies a string
+ *@dest: rep destination string to be copied to
+ *@src: rep source string
+ *@n: the amount of characters to be copied
+ *Return: return the concatenated string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
+	int v, z;
 	char *s = dest;
 
-	i = 0;
-	while (src[i] != '\0' && i < n - 1)
+	v = 0;
+	while (src[v] != '\0' && v < n - 1)
 	{
-		dest[i] = src[i];
-		i++;
+		dest[v] = src[v];
+		v++;
 	}
-	if (i < n)
+	if (v < n)
 	{
-		j = i;
-		while (j < n)
+		z = v;
+		while (z < n)
 		{
-			dest[j] = '\0';
-			j++;
+			dest[z] = '\0';
+			z++;
 		}
 	}
 	return (s);
 }
 
 /**
- **_strncat - Concatenates two strings
- *@dest: the first str
- *@src: the second str
- *@n: The amount of bytes to be maximally used
- *Return: The concatenated string
+ **_strncat - the function here concatenates two strings
+ *@dest: this is the first string
+ *@src: this is the second string
+ *@n: this is the amount of bytes to be maximally used
+ *Return: return the concatenated string
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int v, z;
 	char *s = dest;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < n)
+	v = 0;
+	z = 0;
+	while (dest[v] != '\0')
+		v++;
+	while (src[z] != '\0' && z < n)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		dest[v] = src[z];
+		v++;
+		z++;
 	}
-	if (j < n)
-		dest[i] = '\0';
+	if (z < n)
+		dest[v] = '\0';
 	return (s);
 }
 
 /**
- **_strchr - Locates a char in a str
- *@s: the str to be parsed
- *@c: the char to look for
- *Return: (s) a pointer to the memory area s
+ **_strchr - function locates a character in a string
+ *@s: string to be parsed
+ *@c: character to look for
+ *Return: should return (s) a pointer to the memory area s
  */
 char *_strchr(char *s, char c)
 {

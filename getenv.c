@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * get_environ - Returns the str array copy of our environ
- * @info: structure containing potential arguments. Used to maintain
- *        constant function prototype.
- * Return: 0 always
+ * get_environ - function returns the string array copy of our environ
+ * @info: this is the structure containing potential arguments
+ * Used to maintain constant function prototype.
+ * Return: Always return 0
  */
 char **get_environ(info_t *info)
 {
@@ -18,16 +18,16 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - remove an environment var
- * @info: structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: 1 on delete, 0 otherwise
- * @var: the str env vaiabler property
+ * _unsetenv - this removes an environment variable
+ * @info: this is the structure containing potential arguments
+ * Used to maintain constant function prototype
+ * @var: the string env var property
+ * Return: return 1 on delete, else 0 otherwise
  */
 int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
-	size_t i = 0;
+	size_t v = 0;
 	char *p;
 
 	if (!node || !var)
@@ -38,25 +38,25 @@ int _unsetenv(info_t *info, char *var)
 		p = starts_with(node->str, var);
 		if (p && *p == '=')
 		{
-			info->env_changed = delete_node_at_index(&(info->env), i);
-			i = 0;
+			info->env_changed = delete_node_at_index(&(info->env), v);
+			v = 0;
 			node = info->env;
 			continue;
 		}
 		node = node->next;
-		i++;
+		v++;
 	}
 	return (info->env_changed);
 }
 
 /**
- * _setenv - Initialize a new environment var,
- *           or modify an existing one
- * @info: structure containing potential arguments. Used to maintain
- *        constant function prototype.
- * @var: the str env variable property
- * @value: the str env variable value
- *  Return: 0 always
+ * _setenv - this initialize a new environment variable
+ * or modify an existing one
+ * @info: this is structure containing potential arguments
+ * Used to maintain constant function prototype.
+ * @var: the string env var property
+ * @value: the string env var value
+ *  Return: Always return 0
  */
 int _setenv(info_t *info, char *var, char *value)
 {

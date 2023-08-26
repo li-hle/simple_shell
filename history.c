@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * get_history_file - Gets the history file
- * @info: Parameter structure
- *
- * Return: Allocated string containg history file
+ * get_history_file - this function gets the history file
+ * @info: parameter struct
+ * Return: the allocated string containg history file
  */
 
 char *get_history_file(info_t *info)
@@ -25,10 +24,10 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - Creates a file, or appends to an existing file
- * @info: The parameter structure
- *
- * Return: On success 1, else -1
+ * write_history - tjis function creates a file, or
+ * appends to an existing file
+ * @info: this is the parameter struct
+ * Return: 1 on success, else -1
  */
 int write_history(info_t *info)
 {
@@ -54,10 +53,9 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - Reads history from file
- * @info: The parameter structure
- *
- * Return: Histcount on success, 0 otherwise
+ * read_history - this function reads history from file
+ * @info: this is the parameter struct
+ * Return: histcount on success, 0 otherwise
  */
 int read_history(info_t *info)
 {
@@ -103,12 +101,12 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - Adds entry to a history linked list
- * @info: structure containing potential arguments. Used to maintain
- * @buf: Buffer
- * @linecount: The history linecount, histcount
- *
- * Return: 0 always
+ * build_history_list - this function adds entry to a history linked list
+ * @info: this is the structure containing potential arguments
+ * Used to maintain
+ * @buf: the buffer
+ * @linecount: this is the history linecount, histcount
+ * Return: Always return 0
  */
 int build_history_list(info_t *info, char *buf, int linecount)
 {
@@ -124,10 +122,11 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - Renumbers the history linked list after changes
- * @info: structure containing potential arguments. Used to maintain
- *
- * Return: The new histcount
+ * renumber_history - function here renumbers the history
+ * linked list after changes
+ * @info: this is the structure containing potential arguments
+ * Used to maintain
+ * Return: this is the new histcount
  */
 int renumber_history(info_t *info)
 {
